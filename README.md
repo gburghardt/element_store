@@ -4,7 +4,7 @@ ElementStore is utility class for managing and caching references to Document
 Object Model nodes inside a root node. It has few dependencies and integrates
 well with existing JavaScript libraries and frameworks.
 
-## Why use ElementStore?
+### Why use ElementStore?
 
 You despise:
 
@@ -27,7 +27,7 @@ You like:
 - An easy solution to bake in support for all of this into existing class
   libraries
 
-## Features of ElementStore
+### Features of ElementStore
 
 - Easy to use API
 - DOM node references are cached and lazy loaded by default
@@ -49,7 +49,7 @@ You like:
 - An additional mixin called ElementStore.PropertyGetters is included that
   creates property getters for elements, allowing you to write cleaner code.
 
-## Using ElementStore
+### Using ElementStore
 
 It's easy to start using ElementStore in any project.
 
@@ -144,7 +144,7 @@ reference to that DOM node or collection. Now you can defer those processor
 intensive calls to get elements by a CSS selector until you actually _need_ the
 element. This can help reduce page load times.
 
-## Integration with other JavaScript libraries
+### Integration with other JavaScript libraries
 
 Since ElementStore uses the native querySelector and querySelectorAll functions
 by default, it is not backwards compatible with older browsers. You can include
@@ -189,7 +189,7 @@ In the example above, jQuery is used to get elements by selector. Calls to
 ElementStore.getCollection() and ElementStore.getElement() delegate to jQuery
 and return jQuery-wrapped references to DOM nodes.
 
-## Easy integration of ElementStore into existing class libraries
+### Easy integration of ElementStore into existing class libraries
 
 It's easy to integrate ElementStore into your other class libraries. A mixin
 called ElementStore.Utils gives you methods and properties that allow you to
@@ -288,7 +288,7 @@ in your project.
         </script>
     </body>
 
-### Working with inheritance
+#### Working with inheritance
 
 The `elementStore` property of a function prototype serves as the config passed
 into an instance of ElementStore. You can create a hierarchy in your class
@@ -342,7 +342,7 @@ Instances of `Child` will have these methods:
 - items() -> Returns a collection of <li> tags
 - button() -> Returns a <button> tag
 
-## Using the "property getters" feature
+### Using the "property getters" feature
 
 The "property getters" feature allows you to create properties on objects and
 have them execute a custom function. This can only be used with newer browsers.
