@@ -53,7 +53,7 @@ You like:
 
 It's easy to start using ElementStore in any project.
 
-1) Include element_store.js:
+1. Include element_store.js:
 
     <!DOCTYPE HTML>
     <html>
@@ -69,7 +69,7 @@ It's easy to start using ElementStore in any project.
 
   That's it. No other dependencies are required!
 
-2) ElementStore needs a root element. All other elements that are "contained" in
+2. ElementStore needs a root element. All other elements that are "contained" in
   your ElementStore must be inside this root element.
 
     <body>
@@ -83,7 +83,7 @@ It's easy to start using ElementStore in any project.
         </div>
     </body>
 
-3) Instantiate ElementStore and add some configs telling ElementStore what kinds
+3. Instantiate ElementStore and add some configs telling ElementStore what kinds
   of elements it manages, and the CSS selectors used to get them:
 
     <body>
@@ -110,7 +110,7 @@ It's easy to start using ElementStore in any project.
         </script>
     </body>
 
-4) Initialize ElementStore:
+4. Initialize ElementStore:
 
     <body>
         <div id="my_root_element">
@@ -126,15 +126,15 @@ It's easy to start using ElementStore in any project.
         </script>
     </body>
 
-5) Get a single element:
+5. Get a single element:
 
     store.getElement("saveButton"); // returns a <button>
 
-6) Get a collection of elements:
+6. Get a collection of elements:
 
     store.getCollection("items"); // returns a collection of <li>
 
-7) Not sure if it is a single element or collection?
+7. Not sure if it is a single element or collection?
 
     store.get("saveButton"); // returns a <button>
     store.get("items");      // returns a collection of <li>
@@ -198,7 +198,7 @@ bake ElementStore in to any class library quickly.
 *Note:* You'll need to include [Inherit.js](https://github.com/gburghardt/inherit.js)
 in your project.
 
-1) Include all the necessary files for your project:
+1. Include all the necessary files for your project:
 
     <!DOCTYPE HTML>
     <html>
@@ -230,7 +230,7 @@ in your project.
     </body>
     </html>
 
-2) The contents of todo_list.js would be:
+2. The contents of todo_list.js would be:
 
     function TodoList() {}
 
@@ -265,7 +265,7 @@ in your project.
     // Include the Element.Utils mixin
     TodoList.include(Element.Utils);
 
-3) Instantiate and use your class:
+3. Instantiate and use your class:
 
     <body>
         <div id="todo_list">
@@ -295,7 +295,7 @@ into an instance of ElementStore. You can create a hierarchy in your class
 libraries, and the ElementStore.Utils mixin can merge all of the `elementStore`
 configs in the parent classes.
 
-1) First, the "parent" class:
+1. First, the "parent" class:
 
     function Parent() {}
 
@@ -315,7 +315,7 @@ configs in the parent classes.
 
     Parent.include(ElementStore.Utils);
 
-2) Now the "child" class:
+2. Now the "child" class:
 
     function Child() {}
 
@@ -352,7 +352,7 @@ to support this behavior.
 Lets change the previous example to include the ElementStore.PropertyGetters
 mixin as well, which provides this functionality.
 
-1) Include the source code for ElementStore.PropertyGetters:
+1. Include the source code for ElementStore.PropertyGetters:
 
     <!DOCTYPE HTML>
     <html>
@@ -376,7 +376,7 @@ mixin as well, which provides this functionality.
     </body>
     </html>
 
-2) Refactor todo_list.js:
+2. Refactor todo_list.js:
 
     function TodoList() {}
 
