@@ -161,29 +161,29 @@ in your project.
 
 Then all you need to do is include the mixin after ElementStore:
 
-	<!DOCTYPE HTML>
-	<html>
-	<head>
-		...
+      <!DOCTYPE HTML>
+      <html>
+      <head>
+      	...
 
-		<!-- Required by the ElementStore.jQueryAdaptor mixin -->
-		<script type="text/javascript" src="path/to/inherit.js/lib/function.js"></script>
-		
-		<!-- jQuery goodness -->
-		<script type="text/javascript" src="path/to/jquery.js"></script>
-		
-		<!-- ElementStore class -->
-		<script type="text/javascript" src="path/to/element_store.js"></script>
+      	<!-- Required by the ElementStore.jQueryAdaptor mixin -->
+      	<script type="text/javascript" src="path/to/inherit.js/lib/function.js"></script>
+      	
+      	<!-- jQuery goodness -->
+      	<script type="text/javascript" src="path/to/jquery.js"></script>
+      	
+      	<!-- ElementStore class -->
+      	<script type="text/javascript" src="path/to/element_store.js"></script>
 
-		<!-- ElementStore.jQueryAdaptor mixin -->
-		<script type="text/javascript" src="path/to/element_store/jquery_adaptor.js"></script>
+      	<!-- ElementStore.jQueryAdaptor mixin -->
+      	<script type="text/javascript" src="path/to/element_store/jquery_adaptor.js"></script>
 
-		...
-	</head>
-	<body>
-		...
-	</body>
-	</html>
+      	...
+      </head>
+      <body>
+      	...
+      </body>
+      </html>
 
 In the example above, jQuery is used to get elements by selector. Calls to
 ElementStore.getCollection() and ElementStore.getElement() delegate to jQuery
