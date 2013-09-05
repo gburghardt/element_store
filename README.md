@@ -136,8 +136,8 @@ It's easy to start using ElementStore in any project.
 
 7. Not sure if it is a single element or collection?
 
-      store.get("saveButton"); // returns a <button>
-      store.get("items");      // returns a collection of <li>
+        store.get("saveButton"); // returns a <button>
+        store.get("items");      // returns a collection of <li>
 
 Only when calling getElement() or getCollection() will ElementStore fetch the
 reference to that DOM node or collection. Now you can defer those processor
