@@ -1,0 +1,13 @@
+{
+	"name": "element_store",
+	"version": "1.0.0",
+	"author": "Greg Burghardt <greg_burghardt@yahoo.com>",
+	"description": "ElementStore is a utility class for managing and caching references to Document Object Model nodes inside a root node. It has few dependencies and integrates well with existing JavaScript libraries and frameworks.",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/gburghardt/element_store.git"
+	},
+	"dependencies": {
+		"inherit.js": "1.x"
+	}
+}
