@@ -339,7 +339,7 @@ Instances of `Parent' will have the following method:
 Instances of `Child` will have these methods:
 
 - form() -> Returns a <form> tag (inherited from Parent!)
-- items() -> Returns a collection of <li> tags
+- items() -> Returns a collection of `<li>` tags
 - button() -> Returns a <button> tag
 
 ### Using the "property getters" feature
