@@ -55,89 +55,89 @@ It's easy to start using ElementStore in any project.
 
 1. Include element_store.js:
 
-	<!DOCTYPE HTML>
-	<html>
-	<head>
-		...
-		<script type="text/javascript" src="path/to/element_store.js"></script>
-		...
-	</head>
-	<body>
-		...
-	</body>
-	</html>
+    <!DOCTYPE HTML>
+    <html>
+    <head>
+        ...
+        <script type="text/javascript" src="path/to/element_store.js"></script>
+        ...
+    </head>
+    <body>
+        ...
+    </body>
+    </html>
 
   That's it. No other dependencies are required!
 
 2. ElementStore needs a root element. All other elements that are "contained" in
   your ElementStore must be inside this root element.
 
-	<body>
-		<div id="my_root_element">
-			<ul>
-				<li>Item #1</li>
-				<li>Item #2</li>
-			</ul>
+    <body>
+        <div id="my_root_element">
+          <ul>
+              <li>Item #1</li>
+              <li>Item #2</li>
+          </ul>
 
-			<button>Save</button>
-		</div>
-	</body>
+          <button>Save</button>
+        </div>
+    </body>
 
 3. Instantiate ElementStore and add some configs telling ElementStore what kinds
   of elements it manages, and the CSS selectors used to get them:
 
-	<body>
-		<div id="my_root_element">
-			<ul>
-				<li>Item #1</li>
-				<li>Item #2</li>
-			</ul>
+    <body>
+        <div id="my_root_element">
+            <ul>
+                <li>Item #1</li>
+                <li>Item #2</li>
+            </ul>
 
-			<button>Save</button>
-		</div>
+            <button>Save</button>
+        </div>
 
-		<script type="text/javascript">
-			var store = new ElementStore();
+        <script type="text/javascript">
+            var store = new ElementStore();
 
-			store.setConfig({
-				collections: {
-					items: { selector: "ul>li" }
-				},
-				elements: {
-					saveButton: { selector: "button" }
-				}
-			});
-		</script>
-	</body>
+            store.setConfig({
+                collections: {
+                    items: { selector: "ul>li" }
+                },
+                elements: {
+                    saveButton: { selector: "button" }
+                }
+            });
+        </script>
+    </body>
 
 4. Initialize ElementStore:
 
-	<body>
-		<div id="my_root_element">
-			...
-		</div>
+    <body>
+        <div id="my_root_element">
+            ...
+        </div>
 
-		<script type="text/javascript">
-			var store = new ElementStore();
+        <script type="text/javascript">
+            var store = new ElementStore();
 
-			store.setConfig({ ... });
+            store.setConfig({ ... });
 
-			store.init(document.getElementById("my_root_element"));
-		</script>
-	</body>
+            store.init(document.getElementById("my_root_element"));
+        </script>
+    </body>
 
 5. Get a single element:
 
-	store.getElement("saveButton"); // returns a <button>
+   store.getElement("saveButton"); // returns a <button>
 
 6. Get a collection of elements:
 
-	store.getCollection("items"); // returns a collection of <li>
+    store.getCollection("items"); // returns a collection of <li>
 
 7. Not sure if it is a single element or collection?
 
-	store.get("saveButton"); // returns a <button>
-	store.get("items");      // returns a collection of <li>
+    store.get("saveButton"); // returns a <button>
+    store.get("items");      // returns a collection of <li>
 
 Only when calling getElement() or getCollection() will ElementStore fetch the
 reference to that DOM node or collection. Now you can defer those processor
@@ -161,26 +161,27 @@ in your project.
 
 Then all you need to do is include the mixin after ElementStore:
 
+    <!DOCTYPE HTML>
     <html>
     <head>
-    	...
+        ...
 
-    	<!-- Required by the ElementStore.jQueryAdaptor mixin -->
-    	<script type="text/javascript" src="path/to/inherit.js/lib/function.js"></script>
-    	
-    	<!-- jQuery goodness -->
-    	<script type="text/javascript" src="path/to/jquery.js"></script>
-    	
-    	<!-- ElementStore class -->
-    	<script type="text/javascript" src="path/to/element_store.js"></script>
+        <!-- Required by the ElementStore.jQueryAdaptor mixin -->
+        <script type="text/javascript" src="path/to/inherit.js/lib/function.js"></script>
+        
+        <!-- jQuery goodness -->
+        <script type="text/javascript" src="path/to/jquery.js"></script>
+        
+        <!-- ElementStore class -->
+        <script type="text/javascript" src="path/to/element_store.js"></script>
 
-    	<!-- ElementStore.jQueryAdaptor mixin -->
-    	<script type="text/javascript" src="path/to/element_store/jquery_adaptor.js"></script>
+        <!-- ElementStore.jQueryAdaptor mixin -->
+        <script type="text/javascript" src="path/to/element_store/jquery_adaptor.js"></script>
 
-    	...
+        ...
     </head>
     <body>
-    	...
+        ...
     </body>
     </html>
 
@@ -199,93 +200,93 @@ in your project.
 
 1. Include all the necessary files for your project:
 
-	<!DOCTYPE HTML>
-	<html>
-	<head>
-		...
-		<script type="text/javascript" src="path/to/inherit.js/lib/function.js"></script>
-		<script type="text/javascript" src="path/to/jquery.js"></script>
-		<script type="text/javascript" src="path/to/element_store.js"></script>
-		<script type="text/javascript" src="path/to/element_store/jquery_adaptor.js"></script>
+    <!DOCTYPE HTML>
+    <html>
+    <head>
+        ...
+        <script type="text/javascript" src="path/to/inherit.js/lib/function.js"></script>
+        <script type="text/javascript" src="path/to/jquery.js"></script>
+        <script type="text/javascript" src="path/to/element_store.js"></script>
+        <script type="text/javascript" src="path/to/element_store/jquery_adaptor.js"></script>
 
-		<!-- ElementStore.Utils mixin -->
-		<script type="text/javascript" src="path/to/element_store/utils.js"></script>
+        <!-- ElementStore.Utils mixin -->
+        <script type="text/javascript" src="path/to/element_store/utils.js"></script>
 
-		<!-- Your class library -->
-		<script type="text/javascript" src="path/to/todo_list.js"></script>
-		...
-	</head>
-	<body>
+        <!-- Your class library -->
+        <script type="text/javascript" src="path/to/todo_list.js"></script>
+        ...
+    </head>
+    <body>
 
-		<!-- The HTML used by your class library -->
-		<div id="todo_list">
-			<form action="#">
-				<input type="text" name="todo"> <button type="submit">Add</button>
-			</form>
+        <!-- The HTML used by your class library -->
+        <div id="todo_list">
+            <form action="#">
+                <input type="text" name="todo"> <button type="submit">Add</button>
+            </form>
 
-			Items: <span class="itemCount">0</span>
-			<ol></ol>
-		</div>
-	</body>
-	</html>
+            Items: <span class="itemCount">0</span>
+            <ol></ol>
+        </div>
+    </body>
+    </html>
 
 2. The contents of todo_list.js would be:
 
-	function TodoList() {}
+    function TodoList() {}
 
-	TodoList.prototype = {
-		constructor: TodoList,
+    TodoList.prototype = {
+        constructor: TodoList,
 
-		elementStore: {
-			collections: {
-				items: { selector: "ol>li", nocache: true }
-			},
-			elements: {
-				todoField: { selector: "input[name=todo]", eager: true },
-				list: { selector: "ol" },
-				itemCount: { selector: ".itemCount" }
-			}
-		},
+        elementStore: {
+            collections: {
+               items: { selector: "ol>li", nocache: true }
+            },
+            elements: {
+                todoField: { selector: "input[name=todo]", eager: true },
+                list: { selector: "ol" },
+                itemCount: { selector: ".itemCount" }
+            }
+        },
 
-		init: function(element) {
-			this.initElementStore(element);
-		},
+        init: function(element) {
+            this.initElementStore(element);
+        },
 
-		addItem: function(event) {
-			event.preventDefault();
+        addItem: function(event) {
+            event.preventDefault();
 
-			var todoText = this.todoField().val();
+            var todoText = this.todoField().val();
 
-			this.list().append('<li>' + todoText + '</li>');
-			this.itemCount().html(this.items().length);
-		}
-	};
+            this.list().append('<li>' + todoText + '</li>');
+            this.itemCount().html(this.items().length);
+        }
+    };
 
-	// Include the Element.Utils mixin
-	TodoList.include(Element.Utils);
+    // Include the Element.Utils mixin
+    TodoList.include(Element.Utils);
 
 3. Instantiate and use your class:
 
-	<body>
-		<div id="todo_list">
-			<form action="#">
-				<input type="text" name="todo"> <button type="submit">Add</button>
-			</form>
+    <body>
+        <div id="todo_list">
+            <form action="#">
+                <input type="text" name="todo"> <button type="submit">Add</button>
+            </form>
 
-			Items: <span class="itemCount">0</span>
-			<ol></ol>
-		</div>
+            Items: <span class="itemCount">0</span>
+            <ol></ol>
+        </div>
 
-		<script type="text/javascript">
-			var todoList = new TodoList();
+        <script type="text/javascript">
+            var todoList = new TodoList();
 
-			todoList.init(document.getElementById("todo_list"));
+            todoList.init(document.getElementById("todo_list"));
 
-			$("#todo_list").submit(function(event) {
-				todoList.addItem(event);
-			});
-		</script>
-	</body>
+            $("#todo_list").submit(function(event) {
+              todoList.addItem(event);
+            });
+        </script>
+    </body>
 
 #### Working with inheritance
 
@@ -296,40 +297,40 @@ configs in the parent classes.
 
 1. First, the "parent" class:
 
-	function Parent() {}
+    function Parent() {}
 
-	Parent.prototype = {
-		constructor: Parent,
+    Parent.prototype = {
+        constructor: Parent,
 
-		elementStore: {
-			elements: {
-				form: { selector: "form" }
-			}
-		},
+        elementStore: {
+            elements: {
+                form: { selector: "form" }
+            }
+        },
 
-		init: function(element) {
-		  this.initElementStore(element);
-		}
-	};
+        init: function(element) {
+            this.initElementStore(element);
+        }
+    };
 
-	Parent.include(ElementStore.Utils);
+    Parent.include(ElementStore.Utils);
 
 2. Now the "child" class:
 
-	function Child() {}
+    function Child() {}
 
-	// "inherit" from the Parent class
-	Child.prototype = new Parent();
+    // "inherit" from the Parent class
+    Child.prototype = new Parent();
 
-	// More ElementStore configs
-	Child.prototype.elementStore = {
-		collections: {
-			items: { selector: "li" }
-		},
-		elements: {
-			button: { selector: "button" }
-		}
-	};
+    // More ElementStore configs
+    Child.prototype.elementStore = {
+        collections: {
+            items: { selector: "li" }
+        },
+        elements: {
+            button: { selector: "button" }
+        }
+    };
 
 Instances of `Parent' will have the following method:
 
@@ -353,44 +354,44 @@ mixin as well, which provides this functionality.
 
 1. Include the source code for ElementStore.PropertyGetters:
 
-	<!DOCTYPE HTML>
-	<html>
-	<head>
-		...
-		<script type="text/javascript" src="path/to/inherit.js/lib/function.js"></script>
-		<script type="text/javascript" src="path/to/jquery.js"></script>
-		<script type="text/javascript" src="path/to/element_store.js"></script>
-		<script type="text/javascript" src="path/to/element_store/jquery_adaptor.js"></script>
-		<script type="text/javascript" src="path/to/element_store/utils.js"></script>
+    <!DOCTYPE HTML>
+    <html>
+    <head>
+        ...
+        <script type="text/javascript" src="path/to/inherit.js/lib/function.js"></script>
+        <script type="text/javascript" src="path/to/jquery.js"></script>
+        <script type="text/javascript" src="path/to/element_store.js"></script>
+        <script type="text/javascript" src="path/to/element_store/jquery_adaptor.js"></script>
+        <script type="text/javascript" src="path/to/element_store/utils.js"></script>
 
-		<!-- ElementStore.PropertyGetters mixin -->
-		<script type="text/javascript" src="path/to/element_store/property_getters.js"></script>
+        <!-- ElementStore.PropertyGetters mixin -->
+        <script type="text/javascript" src="path/to/element_store/property_getters.js"></script>
 
-		<!-- Your class library -->
-		<script type="text/javascript" src="path/to/todo_list.js"></script>
-		...
-	</head>
-	<body>
-		...
-	</body>
-	</html>
+        <!-- Your class library -->
+        <script type="text/javascript" src="path/to/todo_list.js"></script>
+        ...
+    </head>
+    <body>
+        ...
+    </body>
+    </html>
 
 2. Refactor todo_list.js:
 
-	function TodoList() {}
+    function TodoList() {}
 
-	TodoList.prototype = {
-		...
+    TodoList.prototype = {
+      ...
 
-		addItem: function(event) {
-			event.preventDefault();
+        addItem: function(event) {
+            event.preventDefault();
 
-			var todoText = this.todoField.val();
+            var todoText = this.todoField.val();
 
-			this.list.append('<li>' + todoText + '</li>');
-			this.itemCount.html(this.items.length);
-		}
-	};
+            this.list.append('<li>' + todoText + '</li>');
+            this.itemCount.html(this.items.length);
+        }
+    };
 
 The ElementStore.PropertyGetters mixin removes all those pesky parenthesis from
 the auto generated methods to get elements and collections!
