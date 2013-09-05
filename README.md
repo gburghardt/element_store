@@ -55,17 +55,17 @@ It's easy to start using ElementStore in any project.
 
 1. Include element_store.js:
 
-    <!DOCTYPE HTML>
-    <html>
-    <head>
-        ...
-        <script type="text/javascript" src="path/to/element_store.js"></script>
-        ...
-    </head>
-    <body>
-        ...
-    </body>
-    </html>
+      <!DOCTYPE HTML>
+      <html>
+      <head>
+          ...
+          <script type="text/javascript" src="path/to/element_store.js"></script>
+          ...
+      </head>
+      <body>
+          ...
+      </body>
+      </html>
 
   That's it. No other dependencies are required!
 
