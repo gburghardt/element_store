@@ -332,7 +332,7 @@ configs in the parent classes.
             }
         };
 
-Instances of `Parent' will have the following method:
+Instances of `Parent` will have the following method:
 
 - form() -> Returns a `<form>` tag
 
