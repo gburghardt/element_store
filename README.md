@@ -72,72 +72,72 @@ It's easy to start using ElementStore in any project.
 2. ElementStore needs a root element. All other elements that are "contained" in
   your ElementStore must be inside this root element.
 
-    <body>
-        <div id="my_root_element">
-          <ul>
-              <li>Item #1</li>
-              <li>Item #2</li>
-          </ul>
+        <body>
+            <div id="my_root_element">
+              <ul>
+                  <li>Item #1</li>
+                  <li>Item #2</li>
+              </ul>
 
-          <button>Save</button>
-        </div>
-    </body>
+              <button>Save</button>
+            </div>
+        </body>
 
 3. Instantiate ElementStore and add some configs telling ElementStore what kinds
   of elements it manages, and the CSS selectors used to get them:
 
-    <body>
-        <div id="my_root_element">
-            <ul>
-                <li>Item #1</li>
-                <li>Item #2</li>
-            </ul>
+        <body>
+            <div id="my_root_element">
+                <ul>
+                    <li>Item #1</li>
+                    <li>Item #2</li>
+                </ul>
 
-            <button>Save</button>
-        </div>
+                <button>Save</button>
+            </div>
 
-        <script type="text/javascript">
-            var store = new ElementStore();
+            <script type="text/javascript">
+                var store = new ElementStore();
 
-            store.setConfig({
-                collections: {
-                    items: { selector: "ul>li" }
-                },
-                elements: {
-                    saveButton: { selector: "button" }
-                }
-            });
-        </script>
-    </body>
+                store.setConfig({
+                    collections: {
+                        items: { selector: "ul>li" }
+                    },
+                    elements: {
+                        saveButton: { selector: "button" }
+                    }
+                });
+            </script>
+        </body>
 
 4. Initialize ElementStore:
 
-    <body>
-        <div id="my_root_element">
-            ...
-        </div>
+        <body>
+            <div id="my_root_element">
+                ...
+            </div>
 
-        <script type="text/javascript">
-            var store = new ElementStore();
+            <script type="text/javascript">
+                var store = new ElementStore();
 
-            store.setConfig({ ... });
+                store.setConfig({ ... });
 
-            store.init(document.getElementById("my_root_element"));
-        </script>
-    </body>
+                store.init(document.getElementById("my_root_element"));
+            </script>
+        </body>
 
 5. Get a single element:
 
-   store.getElement("saveButton"); // returns a <button>
+        store.getElement("saveButton"); // returns a <button>
 
 6. Get a collection of elements:
 
-    store.getCollection("items"); // returns a collection of <li>
+        store.getCollection("items"); // returns a collection of <li>
 
 7. Not sure if it is a single element or collection?
 
-    store.get("saveButton"); // returns a <button>
-    store.get("items");      // returns a collection of <li>
+      store.get("saveButton"); // returns a <button>
+      store.get("items");      // returns a collection of <li>
 
 Only when calling getElement() or getCollection() will ElementStore fetch the
 reference to that DOM node or collection. Now you can defer those processor
