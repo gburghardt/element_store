@@ -1,6 +1,6 @@
 ## ElementStore
 
-ElementStore is utility class for managing and caching references to Document
+ElementStore is a utility class for managing and caching references to Document
 Object Model nodes inside a root node. It has few dependencies and integrates
 well with existing JavaScript libraries and frameworks.
 
