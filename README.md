@@ -334,13 +334,13 @@ configs in the parent classes.
 
 Instances of `Parent' will have the following method:
 
-- form() -> Returns a <form> tag
+- form() -> Returns a `<form>` tag
 
 Instances of `Child` will have these methods:
 
-- form() -> Returns a <form> tag (inherited from Parent!)
+- form() -> Returns a `<form>` tag (inherited from Parent!)
 - items() -> Returns a collection of `<li>` tags
-- button() -> Returns a <button> tag
+- button() -> Returns a `<button>` tag
 
 ### Using the "property getters" feature
 
