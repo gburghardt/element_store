@@ -262,8 +262,8 @@ in your project.
             }
         };
 
-        // Include the Element.Utils mixin
-        TodoList.include(Element.Utils);
+        // Include the ElementStore.Utils mixin
+        TodoList.include(ElementStore.Utils);
 
 3. Instantiate and use your class:
 
