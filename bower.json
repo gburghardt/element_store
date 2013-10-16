@@ -2,7 +2,10 @@
 	"name": "element_store",
 	"description": "ElementStore is a utility class for managing and caching references to Document Object Model nodes inside a root node.",
 	"version": "1.0.0",
-	"author": "Greg Burghardt <greg_burghardt@yahoo.com>",
+	"homepage": "https://github.com/gburghardt/element_store",
+	"authors": [
+		"Greg Burghardt <greg_burghardt@yahoo.com>"
+	],
 	"license": "MIT",
 	"repository": { "type": "git", "url": "https://github.com/gburghardt/element_store.git" },
 	"main": [
@@ -15,6 +18,6 @@
 		"lib/element_store/zepto_adaptor.js"
 	],
 	"dependencies": {
-		"inherit.js": "1.x"
+		"inherit.js": "1.0.0"
 	}
 }
