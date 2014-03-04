@@ -16,8 +16,5 @@
 		"lib/element_store/sizzle_adaptor.js",
 		"lib/element_store/utils.js",
 		"lib/element_store/zepto_adaptor.js"
-	],
-	"dependencies": {
-		"inherit.js": "1.0.0"
-	}
+	]
 }
